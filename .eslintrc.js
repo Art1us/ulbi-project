@@ -55,6 +55,7 @@ module.exports = {
             "none",
             { overrides: { "=": "after", "?": "before", ":": "before" } },
         ],
+        "max-len": ["error", { ignoreComments: true }],
     },
     globals: {
         __IS_DEV__: true,
