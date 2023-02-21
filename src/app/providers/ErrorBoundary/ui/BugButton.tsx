@@ -1,21 +1,25 @@
-import { ReactElement, useEffect, useState } from "react"
-import { useTranslation } from "react-i18next"
-import { Button } from "shared/ui/Button/Button"
+import { Button } from 'shared/ui/Button/Button';
+import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
-/* Component for testing */
-export function BugButton(): ReactElement {
-    const { t } = useTranslation()
-    const [error, setError] = useState(false)
+// Компонент для тестирования ErrorBoundary
+export const BugButton = () => {
+    const [error, setError] = useState(false);
+    const { t } = useTranslation();
 
-    function onThrow() {
-        setError(true)
-    }
+    const onThrow = () => setError(true);
 
     useEffect(() => {
         if (error) {
-            throw new Error()
+            throw new Error();
         }
-    }, [error])
+    }, [error]);
 
-    return <Button onClick={onThrow}>{t("Throw Error")}</Button>
-}
+    return (
+        <Button
+            onClick={onThrow}
+        >
+            {t('throw error')}
+        </Button>
+    );
+};
