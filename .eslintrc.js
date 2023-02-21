@@ -32,6 +32,7 @@ module.exports = {
         "react/require-default-props": "off",
         "react/react-in-jsx-scope": "off",
         "react/jsx-props-no-spreading": "warn",
+        "react/function-component-definition": "off",
         "arrow-parens": ["error", "as-needed"],
         "no-shadow": "off",
         "import/extensions": "off",
@@ -66,7 +67,7 @@ module.exports = {
             "none",
             { overrides: { "=": "after", "?": "before", ":": "before" } },
         ],
-        "max-len": ["error", { ignoreComments: true }],
+        "max-len": ["error", { ignoreComments: true, code: 90 }],
     },
     globals: {
         __IS_DEV__: true,
