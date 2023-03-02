@@ -1,4 +1,3 @@
-import { useTheme } from "app/providers/ThemeProvider"
 import {
     MouseEvent,
     ReactElement,
@@ -26,7 +25,6 @@ export function Modal(props: ModalProps): ReactElement {
 
     const [isClosing, setIsClosing] = useState(false)
     const timerRef = useRef<ReturnType<typeof setTimeout>>()
-    const { theme } = useTheme()
 
     const closeHandler = useCallback(() => {
         if (onClose) {
@@ -65,7 +63,6 @@ export function Modal(props: ModalProps): ReactElement {
     const mods: Record<string, boolean> = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
-        [cls[theme]]: true,
     }
 
     return (
