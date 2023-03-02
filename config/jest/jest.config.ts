@@ -8,23 +8,10 @@ import path from "path"
 export default {
     clearMocks: true,
     testEnvironment: "jsdom",
-    coveragePathIgnorePatterns: [
-        "\\\\node_modules\\\\",
-    ],
-    moduleFileExtensions: [
-        "js",
-        "jsx",
-        "ts",
-        "tsx",
-        "json",
-        "node",
-    ],
-    moduleDirectories: [
-        "node_modules",
-    ],
-    modulePaths: [
-        "<rootDir>src",
-    ],
+    coveragePathIgnorePatterns: ["\\\\node_modules\\\\"],
+    moduleFileExtensions: ["js", "jsx", "ts", "tsx", "json", "node"],
+    moduleDirectories: ["node_modules"],
+    modulePaths: ["<rootDir>src"],
     testMatch: [
         // Обнаружил разницу между МАК ОС и ВИНДОУС!!!
         "<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)",
@@ -35,6 +22,7 @@ export default {
         "\\.s?css$": "identity-obj-proxy",
         "\\.svg": path.resolve(__dirname, "jestEmptyComponent.tsx"),
     },
+    globals: { __IS_DEV__: true },
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
 
